@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <title>Document</title>
+    <script>
+        document.documentElement.style.fontSize = window.innerWidth / 375 * 50 + 'px';
+    </script>
+</head>
+<body ng-controller="main">
+    <div class="box">
+        <header>
+            <h3>公司</h3>
+            <i class="iconfont">&#xe729;</i>
+        </header>
+       
+        <section>
+            <nav>
+                <ul>
+                    <li>融资</li>
+                    <li>规模</li>
+                    <li>行业</li>
+                </ul>
+            </nav>
+            <div class="list" ng-repeat = 'val in data'>
+                <dl>
+                    <dt><img src="{{val.img}}"></dt>
+                    <dd>
+                        <h3>{{val.name}}</h3>
+                        <p class="address">{{val.address}}</p>
+                        <p class="type">{{val.type}}</p>
+                        <p class="search">{{val.search}}</p>
+                    </dd>
+                </dl>
+            </div>
+            
+        </section>
+        <footer>
+            <a href="#">
+                <i class="iconfont">&#xe613;</i>
+                <span>职位</span>
+            </a>
+            <a href="#">
+                <i class="iconfont">&#xe61b;</i>
+                <span>公司</span>
+            </a>
+            <a href="#">
+                <i class="iconfont">&#xe60e;</i>
+                <span>消息</span>
+            </a>
+            <a href="#">
+                <i class="iconfont">&#xe647;</i>
+                <span>我的</span>
+            </a>
+        </footer>
+    </div>
+</body>
+<script src="angular.js"></script>
+<script>
+    angular.module('app',[])
+           .controller('main',['$scope','$http',function($scope,$http){
+                $http({
+                    url:'http://localhost:3000/list',
+                    method:'POST'
+                })
+                .then(result=>{
+                    console.log(result.data)
+                    $scope.data = result.data;
+                },error=>{
+                    console.log(arr)
+                })
+           }])
+</script>
+</html>

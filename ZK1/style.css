@@ -1,0 +1,94 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration:none;
+    font-weight:normal;
+}
+html,body{
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+    font-size:0.32rem;
+}
+.box{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+.box header{
+    width:100%;
+    height:1rem;
+    flex-shrink:0;
+    text-align:center;
+    background:skyblue;
+    color:#fff;
+    line-height:1rem;
+}
+.box section{
+    width:100%;
+    flex:1;
+    overflow:hidden;
+    overflow-y:scroll;
+}
+.box section nav ul{
+    width:100%;
+    display:flex;
+    text-align:center;
+}
+.box section nav ul li{
+    flex:1;
+    padding:0.2rem 0;
+}
+.box section .list{
+    box-sizing:border-box;
+    padding:0.2rem;
+    
+}
+.box section .list dl{
+    display:flex;
+    padding:0.2rem 0;
+    border-bottom:0.02rem solid #ccc;
+}
+.box section .list dl dt{
+    width:25%;
+}
+.box section .list dl dt img{
+    width:100%;
+}
+.box section .list dl dd{
+    flex:1;
+    margin-left:0.4rem;
+}
+.box section .list dl dd p.address{
+    padding:0.2rem 0;
+}
+.box section .list dl dd p.type{
+    padding-bottom:0.4rem;
+}
+.box footer{
+    width:100%;
+    height:1rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+}
+.box footer a{
+    flex:1;
+    text-align: center;
+    color:#999;
+}
+.box footer a i.iconfont{
+    font-size:0.4rem;
+}
+.box footer a span{
+    display:block;
+    font-size:0.26rem;
+}
+
+@media screen and (max-width:640px) and (min-width:320px){
+    .box{
+        width:100%;
+    }
+}
